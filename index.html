@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sopping cart</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <script src="./dist/assets/scripts/shopping-cart.js" type="module" defer></script>
+</head>
+
+<body>
+    <!------------  info template ----------->
+    <template class="info-template">
+        <div class="template-detail">
+            <!-- <button class="close-detail">Close</button> -->
+            <div class="product-pic"></div>
+            <div class="product-description">
+                <h2 class="name"></h2>
+                <h2 class="price"></h2>
+                <p class="story"></p>
+                <div class="buttons">
+                    <button class="add-template">add to cart</button>
+                    <button class="order-template">order</button>
+                </div>
+
+            </div>
+        </div>
+    </template>
+
+
+    <!------------- cart template -------------->
+    <template class="cart-template">
+        <div class="cart-elements">
+            <div class="img-description">
+                <p class="cart-img"></p>
+                <div class="total-name">
+                    <p class="cart-name"></p>
+                    <p class="total-item"></p>
+                    <p class="cart-price"></p>
+                </div>
+            </div>
+
+            <div class="change-remove">
+                <div class="change-buttons">
+                    <button class="minus">-</button>
+                    <button class="plus">+</button>
+                </div>
+                <div class="remove-button">
+                    <button class="remove-item">✕</button>
+                </div>
+            </div>
+
+        </div>
+    </template>
+
+
+
+    <!---------------- Navigation bar ------------>
+    <div class="cart-details">
+
+        <div class="cart-nav">
+            <div>
+                <h2 class="dex">Tsering Kitchen</h2>
+                <h2 class="mob">TK</h2>
+                <div class="cart-order">
+                    <!-- <button class="go-to-menu"><a href="#menu-header" class="go-to-menu">menu</a></button> -->
+                    <a href="#menu-header" class="go-to-menu">menu</a>
+                </div>
+            </div>
+        </div>
+        <!---------------- car header ---------------->
+        <h1 class="Cart-header-h1">Cart</h1>
+        <!---------- Cart item container ----------->
+        <div class="cart-item-container">
+            <p class="empty-cart-para">Your cart is empty</p>
+        </div>
+        <div class="total-price-count">
+            <p></p>
+        </div>
+        <div class="order-wrapper">
+            <button class="cart-order-now">Order now</button>
+        </div>
+    </div>
+
+    <!-------------- order confirm --------->
+    <div class="order-confirm-backdrop">
+        <div class="order-details-wrapper">
+            <div class="final-order-details">
+                <p class="order-id">Order Id: TK007871</p>
+                <p class="total-order">Total item: 20</p>
+                <p class="total-order-price">Price: US$ 200</p>
+            </div>
+
+            <div class="confirm-cancel">
+                <button class="confirm-order">Confirm</button>
+                <button class="cancel-order">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <!--------------- confirm order box ---------->
+    <div class="order-confirm-msg-div">
+        <div>
+            <p>Your order is successfull. Thank you for eating at Tsering Kitchen.</p>
+            <button class="close-confirm-msg">Close</button>
+        </div>
+    </div>
+    <!--------------- empty ocart msg box  --------->
+    <div class="empty-cart-msg">
+        <div>
+            <p>Your cart is empty. Explore the menu</p>
+            <button class="close-empty-cart-msg">Close</button>
+        </div>
+    </div>
+
+    <!------------ nav tag will have the height of 100vh for screen scree height > 600px ------->
+
+
+    <article class="home-page">
+        <nav>
+            <div class="navigation-bar">
+                <h2 class="Tsering-Kitchen">Tsering Kitchen</h2>
+                <h2 class="TK">TK</h2>
+                <ul>
+                    <li class="cart">
+                        <em class="cart-box">Cart</em>
+                        <em class="notification"></em>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="home-page-info">
+            <a href="#product-container">
+                Order now
+            </a>
+        </section>
+    </article>
+    <!--------------- Content inside this div will generate by JavaScript -->
+    <div id="prod-detail">
+        <p class="boneAppetite">Bon Appétit</p>
+        <!------content here ------->
+    </div>
+
+    <section id="product-container">
+        <h1 id="menu-header">Menu</h1>
+        <div class="products">
+            <div id="p1">
+                <p class="ramen p-pic"
+                    style="background-image: url('./dist/assets/img/pexels-quang-anh-ha-nguyen-884600.jpg')">
+                    <span>
+                        <a href="#prod-detail">view</a>
+                        <!-- <em class="view"></em> -->
+                    </span>
+                </p>
+                <h2 class="name">Ramen</h2>
+                <h2 class="price"> $ 25.99.</h2>
+                <button class="add">add to cart</button>
+            </div>
+            <div id="p2">
+                <p class="burger p-pic" style="background-image: url('./dist/assets/img/pexels-rajesh-hamburger.jpg');">
+                    <span>
+                        <a href="#prod-detail">view</a>
+                        <!-- <em class="view">view</em> -->
+                    </span>
+                </p>
+                <h2 class="name">Hamburger</h2>
+                <h2 class="price"> $ 5.00</h2>
+                <button class="add">add to cart</button>
+            </div>
+            <div id="p3">
+                <p class="kebab p-pic" style="background-image: url('./dist/assets/img/pexels-shameel-mukkath.jpg');">
+                    <span>
+                        <a href="#prod-detail">view</a>
+                        <!-- <em class="view">view</em> -->
+                    </span>
+                </p>
+                <h2 class="name">Kebab</h2>
+                <h2 class="price"> $ 10.00</h2>
+                <button class="add">add to cart</button>
+            </div>
+            <div id="p4">
+                <p class="Poutine p-pic" style="background-image: url('./dist/assets/img/poutine-104101-1.jpeg');">
+                    <span>
+                        <a href="#prod-detail">view</a>
+                        <!-- <em class="view">view</em> -->
+                    </span>
+                </p>
+                <h2 class="name">Poutine</h2>
+                <h2 class="price">$ 3.00</h2>
+                <button class="add">add to cart</button>
+            </div>
+            <div id="p5">
+                <p class="fish&chips p-pic"
+                    style="background-image: url('./dist/assets/img/pexels-the-castlebar.jpg');">
+                    <span>
+                        <a href="#prod-detail">view</a>
+                        <!-- <em class="view">view</em> -->
+                    </span>
+                </p>
+                <h2 class="name">Fish and Chips</h2>
+                <h2 class="price">$ 3.50</h2>
+                <button class="add">add to cart</button>
+            </div>
+            <div id="p6">
+                <p class="som-tam p-pic" style="background-image: url('./dist/assets/img/Som-Tam-Thai.jpg');">
+                    <span>
+                        <a href="#prod-detail">view</a>
+                        <!-- <em class="view">view</em> -->
+                    </span>
+                </p>
+                <h2 class="name">Som Tam</h2>
+                <h2 class="price">$ 7.00</h2>
+                <button class="add">add to cart</button>
+            </div>
+            <div id="p7">
+                <p class="masala-dosa p-pic"
+                    style="background-image: url('./dist/assets/img/pexels-saveurs-secretes.jpg');">
+                    <span>
+                        <a href="#prod-detail">view</a>
+                        <!-- <em class="view">view</em> -->
+                    </span>
+                </p>
+                <h2 class="name">Masala Dosa</h2>
+                <h2 class="price">$ 1.50</h2>
+                <button class="add">add to cart</button>
+            </div>
+            <div id="p8">
+                <p class="pizza p-pic"
+                    style="background-image:url('./dist/assets/img/2762594d02e842b51e6685fa69105db4.jpg');">
+                    <span>
+                        <a href="#prod-detail">view</a>
+                        <!-- <em class="view">view</em> -->
+                    </span>
+                </p>
+                <h2 class="name">Pizza Napoletana</h2>
+                <h2 class="price">$ 10.00</h2>
+                <button class="add">add to cart</button>
+            </div>
+            <div id="p9">
+                <p class="bibimbap p-pic" style="background-image: url('./dist/assets/img/Bibimbap.jpg');">
+                    <span>
+                        <a href="#prod-detail">view</a>
+                        <!-- <em class="view">view</em> -->
+                    </span>
+                </p>
+                <h2 class="name">Bibimbap</h2>
+                <h2 class="price">$ 8.70</h2>
+                <button class="add">add to cart</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <a href="#product-container" class="go-top">Go top</a>
+            <h3>Links for images</h3>
+            <p class="img-links">
+                <a href="https://www.pexels.com/photo/burger-and-vegetables-placed-on-brown-wood-surface-1565982/"
+                    target="_blank">cover image</a>
+                <a href="https://www.pexels.com/photo/white-scoop-on-white-ceramic-bowl-884600/"
+                    target="_blank">ramen</a>
+
+                <a href="https://www.pexels.com/photo/close-up-photo-of-a-cheese-burger-1633578/"
+                    target="_blank">hamburger</a>
+                <a href="https://www.pexels.com/photo/food-plate-picnic-dinner-5191846/" target="_blank">kebab</a>
+                <a href="https://img.taste.com.au/3r1OdF33/w720-h480-cfill-q80/taste/2016/11/poutine-104101-1.jpeg"
+                    target="_blank">poutine</a>
+                <a href="https://www.pexels.com/photo/bread-with-sliced-lemon-on-white-ceramic-plate-5894001/"
+                    target="_blank">fish and chips</a>
+                <a href="http://samuiholiday.com/som-tam-one-thailands-popular-dishes-several-varieties-heres-lowdown-tasty-salad/"
+                    target="_blank">som tam</a>
+                <a href="https://www.pexels.com/photo/bread-food-wood-dinner-5560763/" target="_blank">masala dosa</a>
+                <a href="https://in.pinterest.com/" target="_blank">pizza napoletana</a>
+                <a href="https://futuredish.com/bibimbap/" target="_blank">bibimbap</a>
+            </p>
+            <h3>Food descriptions references</h3>
+            <p><a href="https://en.wikipedia.org/wiki/Main_Page" target="_blank">wikipedia</a>
+                <a href="https://www.loveandlemons.com/bibimbap-recipe/" target="_blank">love & lemons</a>
+                <a href="https://www.japan-guide.com/e/e2042.html" target="_blank">japan-guide.com</a>
+            </p>
+            <p>Tsering Kitchen &copy;2021</p>
+        </div>
+    </footer>
+</body>
+
+</html>
